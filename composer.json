@@ -1,0 +1,18 @@
+{
+    "name": "mir/she-said-so",
+    "description": "SheSaidSo is an anonymous feedback application.",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mir\\SheSaidSo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mir-37",
+            "email": "mirmutasim37@gmail.com"
+        }
+    ],
+    "require": {}
+}
