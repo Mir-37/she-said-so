@@ -1,11 +1,11 @@
 {
-    "name": "mir/she-said-so",
-    "description": "SheSaidSo is an anonymous feedback application.",
+    "name": "mir/truth-whisper",
+    "description": "Truth whisper is an anonymous feedback application.",
     "type": "project",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Mir\\SheSaidSo\\": "src/"
+            "Mir\\TruthWhisper\\": "src/"
         }
     },
     "authors": [
