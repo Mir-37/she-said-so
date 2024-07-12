@@ -42,11 +42,11 @@ class Route
                 $route["dispatched"] = true;
                 return;
             } catch (\Throwable $th) {
-                $this->returnBadRequest("Class name or function name is invalid");
+                $this->returnBadRequest("Class name or function name is invalid", 500);
                 return;
             }
         }
-        $this->returnBadRequest("Not Found");
+        $this->returnBadRequest("Not Found", 404);
     }
 
     private function normalizePath(string $url_path): string
@@ -57,9 +57,9 @@ class Route
         return $url_path;
     }
 
-    private function returnBadRequest(string $message): mixed
+    private function returnBadRequest(string $message, int $code): mixed
     {
-        http_response_code(400);
-        return json_encode($message);
+        http_response_code($code);
+        //TODO: implement a logger
     }
 }
