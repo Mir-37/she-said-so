@@ -42,6 +42,7 @@ class Route
                 $route["dispatched"] = true;
                 return;
             } catch (\Throwable $th) {
+                // var_dump($th);
                 $this->returnBadRequest("Class name or function name is invalid", 500);
                 return;
             }
