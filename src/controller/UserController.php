@@ -11,9 +11,9 @@ class UserController
         $model = new Model("users");
         // $model->test();
 
-        $model->name = "Mujahid";
-        $model->joined_at = "some";
-        var_dump($model);
+        $model->name = "some";
+        // $model->save();
+        // var_dump($model);
         // $model->id;
         // $model->get_last_id();
     }
