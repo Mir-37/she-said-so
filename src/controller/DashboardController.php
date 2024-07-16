@@ -8,4 +8,9 @@ class DashboardController
     {
         require "./src/resources/views/index.html";
     }
+
+    public function home(): void
+    {
+        require "./src/resources/views/dashboard.html";
+    }
 }

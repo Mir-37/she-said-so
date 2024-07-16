@@ -37,7 +37,7 @@ class AuthController
                 $user["email"] == $_POST["email"] &&
                 password_verify($_POST["password"], $user["password"])
             ) {
-                echo "<alert>Hello User</alert>";
+                header('Location: /truth-whisper/dashboard');
             }
         }
     }
