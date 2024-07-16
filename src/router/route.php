@@ -52,13 +52,16 @@ class Route
 
     private function normalizePath(string $url_path): string
     {
+        $url = "truth-whisper";
+        $url_path = str_replace($url, "", $url_path);
         $url_path = trim($url_path, "/");
         $url_path = "/{$url_path}/";
         $url_path = preg_replace("#[/]{2,}#", '/', $url_path);
+
         return $url_path;
     }
 
-    private function returnBadRequest(string $message, int $code): mixed
+    private function returnBadRequest(string $message, int $code): void
     {
         http_response_code($code);
         //TODO: implement a logger
