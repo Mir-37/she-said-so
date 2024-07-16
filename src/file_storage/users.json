@@ -13,5 +13,12 @@
         "id": 3,
         "name": "Iftekhar Hossain Rahat",
         "joined_at": "2023-09-20"
+    },
+    {
+        "id": 4,
+        "name": "Test name",
+        "password": "$2y$10$Rzd9LFdEIeRdimeuV7JLiuMDl.ZCiwhS\/yfdd\/SBSXobgSyM\/YxdG",
+        "email": "admin@example.com",
+        "joined_at": "2024-07-16"
     }
 ]

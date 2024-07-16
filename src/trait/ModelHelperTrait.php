@@ -41,7 +41,7 @@ trait ModelHelperTrait
         unset($this->data[count($this->data) - 1]);
         array_push($this->data, $new_data);
         $this->data = array_values($this->data);
-        var_dump($this->data);
+        // var_dump($this->data);
     }
 
 

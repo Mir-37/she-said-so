@@ -8,6 +8,7 @@ class Route
 {
     private array $routes = [];
     private string $url_path;
+    private string $base_url = "truth-whisper";
 
     public function __construct()
     {
@@ -52,8 +53,7 @@ class Route
 
     private function normalizePath(string $url_path): string
     {
-        $url = "truth-whisper";
-        $url_path = str_replace($url, "", $url_path);
+        $url_path = str_replace($this->base_url, "", $url_path);
         $url_path = trim($url_path, "/");
         $url_path = "/{$url_path}/";
         $url_path = preg_replace("#[/]{2,}#", '/', $url_path);
