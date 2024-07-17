@@ -5,5 +5,12 @@
         "name": "Food",
         "status": "active",
         "created_at": "2024-07-17"
+    },
+    {
+        "id": 2,
+        "created_by": 1,
+        "name": "Expensive Items",
+        "status": "inactive",
+        "created_at": "2024-07-17"
     }
 ]

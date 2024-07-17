@@ -10,4 +10,4 @@ ini_set(
 
 session_start();
 
-const BASE_URL = "http://truth-whisper.test:8080";
+const BASE_URL = "http://localhost:8080";
