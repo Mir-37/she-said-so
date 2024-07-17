@@ -41,7 +41,7 @@ php -S localhost:8080
 This will start the local web server, and you can interact with registering and logging in.
 
 Demo Username: mirmutasim37@gmail.com
-Demo Password: password
+Demo Password: 12345678
 
 !!! MAKE SURE TO CHANGE "BASE_URL" IN THE "config.php" FILE, IF YOU HAVE SOME PERSONAL CONFIGURATION !!!
 
