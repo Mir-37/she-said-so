@@ -1,20 +1,13 @@
 [
-	{
-		"id": 1,
-		"user_id": 1,
-		"category_id": 1,
-		"title": "Visit to Foodala",
-		"feedback": "Lorem Ipsum Dolor Sit Amit",
-		"file": "public/assets/img.png",
-		"posted_at": "2024-07-18"
-	},
-	{
-		"id": 2,
-		"user_id": 3,
-		"category_id": null,
-		"title": null,
-		"feedback": "Lorem Ipsum Dolor Sit Amit. Lorem Ipsum Dolor Sit Amit, Lorem Ipsum Dolor Sit Amit, Lorem Ipsum Dolor Sit Amit, Lorem Ipsum Dolor Sit Amit",
-		"file": null,
-		"posted_at": "2024-07-18"
-	}
+    {
+        "id": 1,
+        "user_id": 1,
+        "to_user": null,
+        "category_id": 1,
+        "title": null,
+        "feedback": "Pilot run",
+        "file": null,
+        "status": "public",
+        "created_at": "2024-07-17"
+    }
 ]

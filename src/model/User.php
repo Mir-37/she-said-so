@@ -6,6 +6,6 @@ class User extends Model
 {
     public function __construct()
     {
-        parent::__construct("users", ["id", "name", "password", "email", "joined_at"]);
+        parent::__construct("users", ["id", "name", "password", "email", "created_at"]);
     }
 }

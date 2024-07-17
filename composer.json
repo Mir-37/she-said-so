@@ -1,18 +1,20 @@
 {
-    "name": "mir/truth-whisper",
-    "description": "Truth whisper is an anonymous feedback application.",
-    "type": "project",
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Mir\\TruthWhisper\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Mir-37",
-            "email": "mirmutasim37@gmail.com"
-        }
-    ],
-    "require": {}
+	"name": "mir/truth-whisper",
+	"description": "Truth whisper is an anonymous feedback application.",
+	"type": "project",
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"Mir\\TruthWhisper\\": "src/"
+		},
+		"files": [
+			"src/helpers.php"
+		]
+	},
+	"authors": [
+		{
+			"name": "Mir-37",
+			"email": "mirmutasim37@gmail.com"
+		}
+	]
 }

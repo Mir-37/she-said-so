@@ -1,24 +1,9 @@
 [
     {
         "id": 1,
-        "name": "Mir Mutasim Hossain",
-        "joined_at": "2024-07-13"
-    },
-    {
-        "id": 2,
-        "name": "Jamil Mosharrof",
-        "joined_at": "2023-07-13"
-    },
-    {
-        "id": 3,
-        "name": "Iftekhar Hossain Rahat",
-        "joined_at": "2023-09-20"
-    },
-    {
-        "id": 4,
-        "name": "Test name",
-        "password": "$2y$10$Rzd9LFdEIeRdimeuV7JLiuMDl.ZCiwhS\/yfdd\/SBSXobgSyM\/YxdG",
-        "email": "admin@example.com",
-        "joined_at": "2024-07-16"
+        "name": "Mir Mutasim",
+        "password": "$2y$10$Rc7VPAdgsmU706C3QM78PeHtqrLNTBkPJI7YOHr.Kk3WVjJ99JSLW",
+        "email": "mirmutasim37@gmail.com",
+        "created_at": null
     }
 ]

@@ -3,12 +3,13 @@
 namespace Mir\TruthWhisper\router;
 
 use Exception;
+use Mir\TruthWhisper\model\Logger;
 
 class Route
 {
     private array $routes = [];
     private string $url_path;
-    private string $base_url = "truth-whisper";
+    private string $base_url = BASE_URL;
 
     public function __construct()
     {
@@ -44,7 +45,7 @@ class Route
                 return;
             } catch (\Throwable $th) {
                 throw $th;
-                $this->returnBadRequest("Class name or function name is invalid", 500);
+                $this->returnBadRequest($th->getMessage(), 500);
                 return;
             }
         }
@@ -64,6 +65,9 @@ class Route
     private function returnBadRequest(string $message, int $code): void
     {
         http_response_code($code);
-        //TODO: implement a logger
+        $logger = new Logger();
+        $logger->message = $message;
+        $logger->created_at = date("Y-m-d", time());
+        $logger->save();
     }
 }

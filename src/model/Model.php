@@ -78,6 +78,11 @@ class Model
 
     public function get(): array
     {
+        if (isset($this->associated_field_name) && $this->associated_field_value) {
+            return array_filter($this->data, function ($query) {
+                return $query[$this->associated_field_name] == $this->associated_field_value;
+            });
+        }
         return $this->data;
     }
 

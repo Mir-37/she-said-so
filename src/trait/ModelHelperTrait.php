@@ -13,7 +13,7 @@ trait ModelHelperTrait
     {
         try {
             $json = file_get_contents($this->path_to_file);
-            $this->data = json_decode($json, true);
+            $this->data = json_decode($json, true) ?? [];
             $this->length = count($this->data);
         } catch (\Throwable $th) {
             throw $th;
@@ -28,11 +28,11 @@ trait ModelHelperTrait
         $new_data["id"] = $this->getLastId() + 1;
 
         foreach ($this->keys as $key) {
-            if (isset($this->associated_field_name)) {
-                if ($key == $this->associated_field_name) {
-                    $new_data[$key] = $this->associated_field_value;
-                }
-            }
+            // if (isset($this->associated_field_name)) {
+            //     if ($key == $this->associated_field_name) {
+            //         $new_data[$key] = $this->associated_field_value;
+            //     }
+            // }
             if ($key !== 'id') {
                 $new_data[$key] = array_key_exists($key, $latest_element) ? $latest_element[$key] : null;
             }
