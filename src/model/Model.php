@@ -46,8 +46,7 @@ class Model
     public function save(): void
     {
         $this->prepareDataBeforeSave();
-        $json_content = json_encode($this->data, JSON_PRETTY_PRINT);
-        file_put_contents($this->path_to_file, $json_content);
+        $this->write();
     }
 
     public function update(int $id, array $data): void
@@ -59,8 +58,7 @@ class Model
                 }
             }
         }
-        $json_content = json_encode($this->data, JSON_PRETTY_PRINT);
-        file_put_contents($this->path_to_file, $json_content);
+        $this->write();
     }
 
     public function delete(int $id): void
@@ -69,8 +67,7 @@ class Model
             $this->data = array_filter($this->data, function ($item) use ($id) {
                 return $item['id'] !== $id;
             });
-            $json_content = json_encode($this->data, JSON_PRETTY_PRINT);
-            file_put_contents($this->path_to_file, $json_content);
+            $this->write();
         } catch (\Throwable $th) {
             throw $th;
         }
