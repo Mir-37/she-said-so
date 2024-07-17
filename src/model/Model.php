@@ -67,6 +67,7 @@ class Model
             $this->data = array_filter($this->data, function ($item) use ($id) {
                 return $item['id'] !== $id;
             });
+            $this->data = array_values($this->data);
             $this->write();
         } catch (\Throwable $th) {
             throw $th;

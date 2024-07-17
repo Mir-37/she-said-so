@@ -26,17 +26,14 @@ class AuthController
         $user->name = $_POST['name'];
         $user->email = $_POST['email'];
         $user->password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-        $user->joined_at = date("Y-m-d");
+        $user->created_at = date("Y-m-d");
         $user->save();
 
         header('Location: /login');
-
-        // var_dump($_POST);
     }
 
     public function login(): void
     {
-
         $user = new User();
         $users = $user->get();
         var_dump($users);

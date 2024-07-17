@@ -40,6 +40,11 @@ $feedback_link = trim(BASE_URL, "/") . "/feedback/" . $_SESSION["login"]["feedba
                                         <p>Date added: <span class="font-semibold text-gray-600"><?php echo htmlspecialchars($feedback['created_at']); ?></span></p>
                                     </div>
                                 </div>
+                                <div class="py-2 flex justify-between text-xs text-gray-400">
+
+                                    <p>Category: <span class="font-semibold text-gray-600"><?php echo htmlspecialchars($feedback['category']); ?></span></p>
+
+                                </div>
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -59,9 +64,18 @@ $feedback_link = trim(BASE_URL, "/") . "/feedback/" . $_SESSION["login"]["feedba
                                 </div>
                                 <div class="mt-auto pt-4 border-t border-gray-200">
                                     <div class="flex justify-between text-xs text-gray-400">
+
                                         <p>Date added: <span class="font-semibold text-gray-600"><?php echo htmlspecialchars($feedback['created_at']); ?></span></p>
+
+                                        <a href="<?php echo "/feedback/delete?id=" . $feedback["id"] ?>" class="px-2 font-semibold text-red-600 hover:text-red-900">Delete</a>
                                     </div>
                                 </div>
+                                <div class="py-2 flex justify-between text-xs text-gray-400">
+
+                                    <p>Category: <span class="font-semibold text-gray-600"><?php echo htmlspecialchars($feedback['category']); ?></span></p>
+
+                                </div>
+
                             </div>
                         <?php endforeach; ?>
                     </div>

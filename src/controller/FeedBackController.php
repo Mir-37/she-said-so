@@ -13,7 +13,9 @@ class FeedBackController
         $users = new User();
         $c = new Category();
         $names = [];
-        $categories = $c->get();
+        $categories = array_filter($c->get(), function ($query) {
+            return $query["status"] == "active";
+        });
         foreach ($users->get() as $value) {
             if ($value["id"] == $_SESSION["login"]["id"]) continue;
             $names[] = [
@@ -42,5 +44,12 @@ class FeedBackController
     function successPage(): void
     {
         require "./src/resources/views/feedback-success.php";
+    }
+
+    public function delete(): void
+    {
+        $feedback = new FeedBack();
+        $feedback->delete($_GET["id"]);
+        header('Location: /dashboard');
     }
 }

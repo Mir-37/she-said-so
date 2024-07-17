@@ -21,24 +21,25 @@
                         <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
                             <div class="mx-auto w-full max-w-xl text-center px-24">
 
-                                <h3 class="text-gray-500 my-2">Add a category</h3>
+                                <h3 class="text-gray-500 my-2">Update category</h3>
                             </div>
 
                             <div class="mt-10 mx-auto w-full max-w-xl">
-                                <form class="space-y-6" action="/manage-category/create" method="POST">
+                                <form class="space-y-6" action="/manage-category/update" method="POST">
                                     <div>
                                         <label for="category" class="block text-sm font-medium leading-6 text-gray-900">Name:</label>
                                         <div class="mt-2">
-                                            <input id="category" name="category" type="text" autocomplete="text" required class="block w-full rounded-md border-0 py-2 ps-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                            <input id="category" name="category" type="text" autocomplete="text" required class="block w-full rounded-md border-0 py-2 ps-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" value="<?php echo htmlspecialchars($cat["name"]) ?>">
                                         </div>
+                                        <input type="hidden" name="id" value=<?php echo $cat["id"] ?>>
                                     </div>
 
                                     <div>
                                         <label for="status" class="block text-sm font-medium leading-6 text-gray-900">Status:</label>
                                         <div class="mt-2">
                                             <select id="category_status" name="status" class="block w-full rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                                <option value="active">Active</option>
-                                                <option value="inactive">Inactive</option>
+                                                <option value="active" <?php if ($cat["status"] == "active") echo "selected" ?>>Active</option>
+                                                <option value="inactive" <?php if ($cat["status"] == "inactive") echo "selected" ?>>Inactive</option>
                                             </select>
                                         </div>
                                     </div>
@@ -67,7 +68,7 @@
                                             <span class="text-gray-900"><?php echo htmlspecialchars($cat["name"]) ?></span>
                                             <div class="flex space-x-2">
                                                 <a href="<?php echo "/manage-category/update?id=" . htmlspecialchars($cat["id"]) ?>" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                                <a href="<?php echo "/manage-category/delete?id=" . htmlspecialchars($cat["id"]) ?>" class="text-red-600 hover:text-red-900">Delete</a>
+                                                <a href="/manage-category" class="text-green-600 hover:text-green-900">Add</a>
                                             </div>
                                         </li>
                                     <?php endforeach; ?>

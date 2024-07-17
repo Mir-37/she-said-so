@@ -32,15 +32,19 @@ class Route
         $path = $this->normalizePath($this->url_path);
         $method = strtoupper($_SERVER["REQUEST_METHOD"]);
         foreach ($this->routes as $route) {
-            if (!preg_match("#^{$route['path']}$#", $path) || $route['method'] != $method) {
+            if (!preg_match("#^{$route['path']}(?<id>[0-9]*)/?$#", $path,  $match) || $route['method'] != $method) {
                 continue;
             }
-
+            $id = $match["id"] ?? null;
             list($class_name, $function_name) = $route["controller"];
 
             try {
                 $controller_instance = new $class_name;
-                $controller_instance->$function_name();
+                if ($id) {
+                    $controller_instance->$function_name($id);
+                } else {
+                    $controller_instance->$function_name();
+                }
                 $route["dispatched"] = true;
                 return;
             } catch (\Throwable $th) {

@@ -21,7 +21,11 @@ $user_name = $_SESSION["login"]["user"] ?? "";
             <div class="hidden lg:flex lg:flex-1 lg:justify-end">
 
                 <span class="text-sm font-semibold leading-6 text-gray-900 pr-4">
-                    <a href="/manage-category/create">Manage Categories</a><br>
+                    <a href="/dashboard">Feedbacks</a><br>
+                </span>
+
+                <span class="text-sm font-semibold leading-6 text-gray-900 pr-4">
+                    <a href="/manage-category">Manage Categories</a><br>
                 </span>
 
                 <span class="text-sm font-semibold leading-6 text-gray-900 pr-4">
