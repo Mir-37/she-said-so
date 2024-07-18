@@ -7,7 +7,8 @@ class HomeController
     public function index(): void
     {
         if (isset($_SESSION["login"])) {
-            header("Location: /dashboard");
+            session_unset();
+            session_regenerate_id(true);
         }
         require "./src/resources/views/index.php";
     }

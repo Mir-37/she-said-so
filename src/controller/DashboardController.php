@@ -9,6 +9,13 @@ use Mir\TruthWhisper\model\FeedBack;
 
 class DashboardController
 {
+    public function __construct()
+    {
+        if (!isset($_SESSION["login"])) {
+            header("location: /");
+        }
+    }
+
     public function index(): void
     {
 

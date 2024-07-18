@@ -8,6 +8,13 @@ use Mir\TruthWhisper\model\User;
 
 class FeedBackController
 {
+    public function __construct()
+    {
+        if (!isset($_SESSION["login"])) {
+            header("location: /");
+        }
+    }
+
     public function index(): void
     {
         $users = new User();

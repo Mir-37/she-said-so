@@ -10,6 +10,9 @@ class CategoryController
 
     public function __construct()
     {
+        if (!isset($_SESSION["login"])) {
+            header("location: /");
+        }
         $this->category = new Category();
     }
     public function index(): void

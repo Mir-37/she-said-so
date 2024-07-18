@@ -60,6 +60,7 @@ class AuthController
     public function logout(): void
     {
         session_destroy();
+        session_unset();
         session_regenerate_id(true);
         header('Location: /');
     }
